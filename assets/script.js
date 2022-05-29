@@ -4,13 +4,13 @@
 let tahun = new Date().getFullYear()
 
 $(document).ready(function () { 
-    $("#topbar").html(topBar)
-    $("#header").html(header)
-    $("#navbar-ku").html(navBar)
-    $("#content-atas").html(contentAtas)
-    $("#centent-tengah").html(contentTengah)
-    $("#berita").html(berita)
-    $("#footer").html(footer)
+    // $("#topbar").html(topBar)
+    // $("#header").html(header)
+    // $("#navbar-ku").html(navBar)
+    // $("#content-atas").html(contentAtas)
+    // $("#centent-tengah").html(contentTengah)
+    // $("#berita").html(berita)
+    // $("#footer").html(footer)
     
 
     // let navItem = Array.from(document.querySelectorAll(".navbar .nav-link"))
