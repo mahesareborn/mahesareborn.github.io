@@ -22,6 +22,7 @@ $(document).ready(function () {
     // })
 
    
+    $("#footer .tahun").html(tahun)
 
     $(window).scroll(function(){
         let height = $(window).scrollTop();
