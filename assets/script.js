@@ -21,18 +21,17 @@ $(document).ready(function () {
     // })
     // })
 
-   
+    // tahun di footer
     $("#footer .tahun").html(tahun)
+
 
     $(window).scroll(function(){
         let height = $(window).scrollTop();
 
         if (height > 50) {
-            
-            $('#header').addClass('fixed-top')
-            $('#navbar-ku').addClass('fixed-top').css('margin-top', '19vh')
+     
+            $('#navbar-ku').addClass('fixed-top')
         } else {
-            $('#header').removeClass('fixed-top')
             $('#navbar-ku').removeClass('fixed-top').css('margin-top', '0vh')
 
         };
@@ -66,7 +65,31 @@ $(document).ready(function () {
             "<i class='fas fa-angle-left'><i>",
             "<i class='fas fa-angle-right'><i>",
         ],
-        navContainer: ".dok-slider"
+        navContainer: ".dok-slider",
+        responsive:{
+            0: {
+                items: 1,
+            },
+            1041: {
+                items: 3,
+            }
+        }
+
+    });
+
+
+    $('#slider-berita').owlCarousel({
+        items:3,
+        loop:true,
+        margin: 0,
+        responsive:{
+            0: {
+                items: 1,
+            },
+            1041: {
+                items: 3,
+            }
+        }
 
     });
 

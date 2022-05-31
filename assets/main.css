@@ -8,6 +8,12 @@ html body {
   padding: 0px;
 }
 
+@media only screen and (max-width: 1000px) {
+  html {
+    overflow-x: hidden;
+  }
+}
+
 #topbar {
   padding: 1em;
   background-color: #15477a;
@@ -62,15 +68,32 @@ html body {
 
 #header {
   padding: 20px 50px 20px 50px;
-  height: 19vh;
+  height: 18vh;
   background-color: #ffffff;
   -webkit-transition: 0.1s;
   transition: 0.1s;
+  background-image: url("benndera.png");
+  background-size: cover;
+}
+
+#header img {
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 1000px) {
   #header {
-    height: 30vh;
+    height: auto;
+  }
+  #header h3 {
+    font-size: 20px;
+  }
+  #header p {
+    font-size: 15px;
+  }
+  #header img {
+    margin-right: 20px;
   }
 }
 
@@ -82,6 +105,20 @@ html body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #ffffff;
+  padding: 8px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 15px 15px 0 0;
+  -webkit-box-shadow: 10px 5px 10px rgba(52, 52, 52, 0.3);
+          box-shadow: 10px 5px 10px rgba(52, 52, 52, 0.3);
+}
+
+@media only screen and (max-width: 1000px) {
+  #header .brand {
+    border-radius: 5px;
+    margin-bottom: 0;
+  }
 }
 
 #header .brand a {
@@ -151,13 +188,26 @@ html body {
 }
 
 .navbar {
+  z-index: 10;
   padding-bottom: 0;
   text-transform: uppercase;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(0.9rem);
+          backdrop-filter: blur(0.9rem);
   -webkit-box-shadow: 0px 5px 10px rgba(52, 52, 52, 0.3);
           box-shadow: 0px 5px 10px rgba(52, 52, 52, 0.3);
+}
+
+@media only screen and (max-width: 1000px) {
+  .navbar {
+    padding-bottom: 15px;
+  }
+}
+
+.navbar .navbar-toggler {
+  background-color: #15477a;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -171,6 +221,19 @@ html body {
   border-bottom: 5px solid #15477a;
 }
 
+@media only screen and (max-width: 1000px) {
+  .navbar .navbar-nav {
+    width: 100vw;
+    -webkit-transform: translate(-12px, 5px);
+            transform: translate(-12px, 5px);
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 0 0 20px 20px;
+  }
+}
+
 .navbar .nav-link {
   color: #15477a;
   -webkit-transition: 0.3s;
@@ -179,6 +242,17 @@ html body {
 
 .navbar .nav-link:hover {
   border-bottom: 5px solid #15477a;
+}
+
+.navbar .navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.navbar .navbar-nav .dropdown-menu {
+  border-radius: 0 0 10px 10px;
+  -webkit-box-shadow: 0px 5px 5px rgba(52, 52, 52, 0.3);
+          box-shadow: 0px 5px 5px rgba(52, 52, 52, 0.3);
 }
 
 @media only screen and (min-width: 1040px) {
@@ -199,17 +273,76 @@ html body {
   position: relative;
 }
 
+#hero-area img {
+  width: 100vw;
+  height: 73vh;
+  background-size: contain;
+}
+
+@media only screen and (max-width: 1040px) {
+  #hero-area img {
+    width: 100vw;
+    height: 23vh;
+  }
+}
+
 #hero-area .slider-item-content {
-  height: 50%;
+  height: 61%;
   color: #ffffff;
   border-radius: 20px;
-  padding: 20px;
+  padding: 2%;
+  padding-bottom: 0;
   position: absolute;
   top: 50%;
   right: 50%;
   -webkit-transform: translate(20%, -50%);
           transform: translate(20%, -50%);
   background-color: #15477a;
+}
+
+#hero-area .slider-item-content p {
+  margin-bottom: 5%;
+}
+
+#hero-area .slider-item-content button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#hero-area .slider-item-content button p {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1040px) {
+  #hero-area .slider-item-content {
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  #hero-area .slider-item-content h2 {
+    font-size: 80%;
+  }
+  #hero-area .slider-item-content p {
+    margin-bottom: 5%;
+    font-size: 40%;
+  }
+  #hero-area .slider-item-content button {
+    margin-right: 0;
+    padding: 10px;
+    width: 30%;
+    height: 10px;
+  }
+  #hero-area .slider-item-content button p {
+    font-size: 5px;
+    margin-bottom: 0;
+  }
 }
 
 #hero-area .slider-item-content .tombol-hero:hover {
@@ -239,6 +372,12 @@ html body {
   transition: 0.2s;
 }
 
+@media only screen and (max-width: 1040px) {
+  #hero-area #slider-hero-nav .owl-prev {
+    display: none;
+  }
+}
+
 #hero-area #slider-hero-nav .owl-prev:hover {
   background: black;
   background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), color-stop(41%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0)));
@@ -266,6 +405,12 @@ html body {
   transition: 1s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+@media only screen and (max-width: 1040px) {
+  #hero-area #slider-hero-nav .owl-next {
+    display: none;
+  }
 }
 
 #hero-area #slider-hero-nav .owl-next:hover {
@@ -299,6 +444,20 @@ html body {
   width: 100vw;
 }
 
+@media only screen and (max-width: 1040px) {
+  .content-atas {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 50px;
+    place-items: center;
+  }
+}
+
 .content-atas .card-atas {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -311,11 +470,22 @@ html body {
   border-radius: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: auto;
+  height: 80%;
   width: 20%;
   background-color: #ffffff;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+@media only screen and (max-width: 1040px) {
+  .content-atas .card-atas {
+    padding: 10px;
+    width: 80%;
+    height: auto;
+  }
+  .content-atas .card-atas i {
+    font-size: 10px;
+  }
 }
 
 .content-atas .card-atas .icon-atas {
@@ -338,9 +508,22 @@ html body {
   border-radius: 100%;
 }
 
+@media only screen and (max-width: 1040px) {
+  .content-atas .card-atas .icon-atas {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 .content-atas .card-atas .icon-atas i {
   font-size: 50px;
   color: #15477a;
+}
+
+@media only screen and (max-width: 1040px) {
+  .content-atas .card-atas .icon-atas i {
+    font-size: 30px;
+  }
 }
 
 .content-atas .card-atas .isi-atas {
@@ -379,6 +562,38 @@ html body {
   font-size: 15px;
 }
 
+.content-atas .card-atas .isi-atas button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-atas .card-atas .isi-atas button p {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1040px) {
+  .content-atas .card-atas .isi-atas h4 {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  .content-atas .card-atas .isi-atas p {
+    font-size: 10px;
+  }
+  .content-atas .card-atas .isi-atas button {
+    height: auto;
+  }
+  .content-atas .card-atas .isi-atas button p {
+    font-size: 10px;
+  }
+}
+
 .content-atas .card-atas:hover {
   -webkit-box-shadow: 0px 15px 20px rgba(25, 25, 25, 0.3);
           box-shadow: 0px 15px 20px rgba(25, 25, 25, 0.3);
@@ -391,6 +606,7 @@ html body {
   height: auto;
   background-color: #15477a;
   color: #ffffff;
+  margin: 0;
 }
 
 .content-tengah .isi-tengah {
@@ -400,6 +616,16 @@ html body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media only screen and (max-width: 1040px) {
+  .content-tengah .isi-tengah {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .content-tengah .isi-tengah p {
+    font-size: 10px;
+  }
 }
 
 .content-tengah .isi-tengah .foto-container {
@@ -415,6 +641,19 @@ html body {
   top: 3%;
   left: 3%;
   border-radius: 0 20px 0 20px;
+  width: 300px;
+  height: 300px;
+}
+
+@media only screen and (max-width: 1040px) {
+  .content-tengah .isi-tengah .foto-container {
+    width: 250px;
+    height: 250px;
+  }
+  .content-tengah .isi-tengah .foto-container .foto {
+    width: 250px;
+    height: 250px;
+  }
 }
 
 .content-tengah .isi-tengah .sambutan {
@@ -427,6 +666,19 @@ html body {
   color: #adadad;
 }
 
+@media only screen and (max-width: 1040px) {
+  .content-tengah .isi-tengah .sambutan {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 1040px) {
+  h4 {
+    text-align: center;
+    font-size: 20px;
+  }
+}
+
 .kiri {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -434,7 +686,8 @@ html body {
 }
 
 .highlight-berita {
-  margin-top: 40px;
+  margin-top: 35px;
+  margin-bottom: 85px;
   width: 250px;
   height: 300px;
   display: -webkit-box;
@@ -450,6 +703,17 @@ html body {
   position: relative;
 }
 
+@media only screen and (max-width: 1040px) {
+  .highlight-berita {
+    margin-bottom: 0;
+  }
+}
+
+.highlight-berita img {
+  height: 150px;
+  width: 250px;
+}
+
 .highlight-berita .isi-berita {
   border-radius: 10px;
   -webkit-box-shadow: 0px 5px 10px rgba(52, 52, 52, 0.3);
@@ -461,6 +725,23 @@ html body {
   background-color: #ffffff;
   padding: 20px 20px 50px 20px;
   font-size: 15px;
+}
+
+@media only screen and (max-width: 1040px) {
+  .highlight-berita {
+    margin-top: 20px;
+  }
+  .highlight-berita img {
+    width: 230px;
+  }
+  .highlight-berita .isi-berita {
+    padding: 15px 15px 20px 15px;
+    width: 110%;
+    height: 50%;
+  }
+  .highlight-berita .isi-berita p {
+    font-size: 12px;
+  }
 }
 
 .kanan {
@@ -493,6 +774,12 @@ html body {
   border-radius: 50px 50px 0 0;
   -webkit-box-shadow: 0px -1px 10px rgba(52, 52, 52, 0.3);
           box-shadow: 0px -1px 10px rgba(52, 52, 52, 0.3);
+}
+
+@media only screen and (max-width: 1040px) {
+  .dok-container {
+    border-radius: 35px 35px 0 0;
+  }
 }
 
 #dokumentasi {
@@ -610,6 +897,7 @@ html body {
 
 #style-2::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   background-color: #F5F5F5;
 }
@@ -622,6 +910,7 @@ html body {
 #style-2::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #15477a;
 }
 /*# sourceMappingURL=main.css.map */
